@@ -1,0 +1,365 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Loan Application Form</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Loan Application Form</h1>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <table>
+
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <select name="Gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Married</td>
+                <td>
+                    <select name="Married" required>
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Dependents</td>
+                <td>
+                    <select name="Dependents" required>
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3+">3+</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Education</td>
+                <td>
+                    <select name="Education" required>
+                        <option value="">Select</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Not Graduate">Not Graduate</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Self Employed</td>
+                <td>
+                    <select name="Self_Employed" required>
+                        <option value="">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Applicant Income</td>
+                <td>
+                    <input
+                        type="number"
+                        name="ApplicantIncome"
+                        min="0"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Coapplicant Income</td>
+                <td>
+                    <input
+                        type="number"
+                        name="CoapplicantIncome"
+                        min="0"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Loan Amount</td>
+                <td>
+                    <input
+                        type="number"
+                        name="LoanAmount"
+                        min="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Loan Amount Term</td>
+                <td>
+                    <input
+                        type="number"
+                        name="Loan_Amount_Term"
+                        min="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Credit History</td>
+                <td>
+                    <select name="Credit_History" required>
+                        <option value="">Select</option>
+                        <option value="1">Good (1)</option>
+                        <option value="0">Bad (0)</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Property Area</td>
+                <td>
+                    <select name="Property_Area" required>
+                        <option value="">Select</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Semiurban">Semiurban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="text-align:center; padding-top:20px;">
+
+                    <input
+                        type="submit"
+                        value="Predict Loan Status">
+
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+</div>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Loan Application | Smart Lender</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏦 Smart Lender</h1>
+
+    <h2>Loan Application Form</h2>
+
+    <p>
+        Enter the applicant's information below to predict whether the loan
+        application is likely to be approved.
+    </p>
+
+    <hr>
+
+    <form action="{{ url_for('predict') }}" method="POST">
+
+        <table>
+
+            <tr>
+                <td><strong>Gender</strong></td>
+                <td>
+                    <select name="Gender" required>
+                        <option value="">-- Select Gender --</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Marital Status</strong></td>
+                <td>
+                    <select name="Married" required>
+                        <option value="">-- Select Marital Status --</option>
+                        <option value="Yes">Married</option>
+                        <option value="No">Single</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Dependents</strong></td>
+                <td>
+                    <select name="Dependents" required>
+                        <option value="">-- Select Dependents --</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3+">3 or More</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Education</strong></td>
+                <td>
+                    <select name="Education" required>
+                        <option value="">-- Select Education --</option>
+                        <option value="Graduate">Graduate</option>
+                        <option value="Not Graduate">Not Graduate</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Self Employed</strong></td>
+                <td>
+                    <select name="Self_Employed" required>
+                        <option value="">-- Select Option --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Applicant Income</strong></td>
+                <td>
+                    <input
+                        type="number"
+                        name="ApplicantIncome"
+                        placeholder="Enter Applicant Income"
+                        min="0"
+                        step="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Co-applicant Income</strong></td>
+                <td>
+                    <input
+                        type="number"
+                        name="CoapplicantIncome"
+                        placeholder="Enter Co-applicant Income"
+                        min="0"
+                        step="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Loan Amount</strong></td>
+                <td>
+                    <input
+                        type="number"
+                        name="LoanAmount"
+                        placeholder="Enter Loan Amount"
+                        min="1"
+                        step="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Loan Term (Months)</strong></td>
+                <td>
+                    <input
+                        type="number"
+                        name="Loan_Amount_Term"
+                        placeholder="Example: 360"
+                        min="1"
+                        step="1"
+                        required>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Credit History</strong></td>
+                <td>
+                    <select name="Credit_History" required>
+                        <option value="">-- Select Credit History --</option>
+                        <option value="1">Good Credit History</option>
+                        <option value="0">Poor Credit History</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><strong>Property Area</strong></td>
+                <td>
+                    <select name="Property_Area" required>
+                        <option value="">-- Select Property Area --</option>
+                        <option value="Urban">Urban</option>
+                        <option value="Semiurban">Semi Urban</option>
+                        <option value="Rural">Rural</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" style="padding-top:25px; text-align:center;">
+
+                    <input
+                        type="submit"
+                        value="Predict Loan Approval">
+
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+
+    <div class="footer">
+
+        <hr>
+
+        <p>
+
+            Smart Lender |
+            Machine Learning Loan Approval Prediction System
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Prediction Result</h1>
+
+    <h2>{{ prediction }}</h2>
+
+    <p>
+
+        Confidence :
+        <strong>{{ confidence }}%</strong>
+
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('input_page') }}" class="btn">
+
+        Predict Another Loan
+
+    </a>
+
+</div>
+
+</body>
+
+</html> -->
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result | Smart Lender</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏦 Smart Lender</h1>
+
+    <h2>Loan Prediction Result</h2>
+
+    <hr>
+
+    <div class="result">
+
+        {% if "Approved" in prediction %}
+
+            <h2 style="color:#198754;">
+                ✅ {{ prediction }}
+            </h2>
+
+            <p>
+                Congratulations! Based on the applicant's financial and
+                personal information, the Machine Learning model predicts
+                that the loan application is likely to be approved.
+            </p>
+
+        {% else %}
+
+            <h2 style="color:#dc3545;">
+                ❌ {{ prediction }}
+            </h2>
+
+            <p>
+                Based on the applicant's financial and personal information,
+                the Machine Learning model predicts that the loan application
+                is unlikely to be approved.
+            </p>
+
+        {% endif %}
+
+        <hr>
+
+        <h3>Prediction Confidence</h3>
+
+        <p>
+
+            <strong>{{ confidence }}%</strong>
+
+        </p>
+
+    </div>
+
+    <br>
+
+    <a href="{{ url_for('input_page') }}" class="btn">
+
+        Predict Another Loan
+
+    </a>
+
+    &nbsp;&nbsp;
+
+    <a href="{{ url_for('home') }}" class="btn">
+
+        Home
+
+    </a>
+
+    <div class="footer">
+
+        <hr>
+
+        <p>
+
+            Smart Lender |
+            Machine Learning Loan Approval Prediction System
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result | Smart Lender</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🏦 Smart Lender</h1>
+
+    <h2>Loan Prediction Result</h2>
+
+    <hr>
+
+    {% if error %}
+
+    <div class="result">
+
+        <h2 style="color:#dc3545;">
+            ⚠ Prediction Failed
+        </h2>
+
+        <p>
+            An error occurred while processing your loan application.
+        </p>
+
+        <hr>
+
+        <h3>Error Details</h3>
+
+        <p>{{ error }}</p>
+
+    </div>
+
+    {% else %}
+
+    <div class="result">
+
+        {% if "Approved" in prediction %}
+
+        <h2 style="color:#198754;">
+            ✅ {{ prediction }}
+        </h2>
+
+        <p>
+            Congratulations!
+            Based on the applicant's financial and personal
+            information, the Machine Learning model predicts
+            that the loan application is likely to be approved.
+        </p>
+
+        {% else %}
+
+        <h2 style="color:#dc3545;">
+            ❌ {{ prediction }}
+        </h2>
+
+        <p>
+            Based on the applicant's financial and personal
+            information, the Machine Learning model predicts
+            that the loan application is unlikely to be approved.
+        </p>
+
+        {% endif %}
+
+        <hr>
+
+        <h3>Prediction Confidence</h3>
+
+        <p>
+
+            <strong>{{ confidence }}%</strong>
+
+        </p>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="{{ url_for('input_page') }}" class="btn">
+
+        Predict Another Loan
+
+    </a>
+
+    &nbsp;&nbsp;
+
+    <a href="{{ url_for('home') }}" class="btn">
+
+        Home
+
+    </a>
+
+    <div class="footer">
+
+        <hr>
+
+        <p>
+
+            © 2026 Smart Lender |
+            Machine Learning Loan Approval Prediction System
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
