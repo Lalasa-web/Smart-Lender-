@@ -1,41 +1,3 @@
-# from flask import Flask, render_template, request
-# from predict import predict_loan
-
-# app = Flask(__name__)
-
-
-# @app.route("/")
-# def home():
-#     return render_template("home.html")
-
-
-# @app.route("/input")
-# def input_page():
-#     return render_template("input.html")
-
-
-# @app.route("/predict", methods=["POST"])
-# def predict():
-
-#     form_data = request.form.to_dict()
-
-#     result, confidence = predict_loan(form_data)
-
-#     if result == "Y":
-#         prediction = "Loan Approved ✅"
-#     else:
-#         prediction = "Loan Rejected ❌"
-
-#     return render_template(
-#         "output.html",
-#         prediction=prediction,
-#         confidence=round(confidence, 2)
-#     )
-
-
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
 """
 ==========================================
 SMART LENDER - FLASK APPLICATION
@@ -158,3 +120,4 @@ if __name__ == "__main__":
         port=5000,
         debug=True
     )
+    
