@@ -167,7 +167,7 @@ Smart-Lender/
 Clone the project from GitHub:
 
 ```
-git clone <your-github-repository-link>
+git clone https://github.com/Lalasa-web/Smart-Lender-.git
 ```
 
 Move into the project directory:
@@ -317,7 +317,7 @@ The Smart Lender application is deployed using Render Cloud Platform.
 
 Deployment URL:
 
-<Add your Render URL here>
+https://smart-lender-i9fg.onrender.com
 
 ---
 
